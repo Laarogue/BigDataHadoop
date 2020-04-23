@@ -10,11 +10,11 @@ RUN apt-get update  && \
 # Install Git
 RUN apt-get -y install git
 
-# Clone git repo
-RUN git clone https://github.com/Laarogue/BigDataHadoop.git
-
 WORKDIR /Docker
 ADD . /workspace
+
+# Clone git repo
+RUN git clone https://github.com/Laarogue/BigDataHadoop.git
 
 RUN pip3 freeze > requirements.txt && \
 	pip3 install -r requirements.txt && \

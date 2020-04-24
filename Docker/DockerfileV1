@@ -7,9 +7,11 @@ RUN apt-get update  && \
 	apt-get install -qy vim && \
 	apt-get -y install git
 
+# Install Git
+RUN apt-get -y install git
+
 WORKDIR /Docker
 ADD . /workspace
-WORKDIR /workspace
 
 # Clone git repo
 RUN git clone https://github.com/Laarogue/BigDataHadoop.git
@@ -22,4 +24,5 @@ RUN pip3 freeze > requirements.txt && \
 EXPOSE 8000
 
 # Go to workspace
+CMD workspace --port 8000
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]

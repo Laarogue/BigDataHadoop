@@ -22,4 +22,4 @@ RUN pip3 freeze > requirements.txt && \
 EXPOSE 8888
 
 # Go to workspace
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--allow-root"]

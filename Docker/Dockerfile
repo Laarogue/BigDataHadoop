@@ -19,7 +19,7 @@ RUN pip3 freeze > requirements.txt && \
 	pip3 install jupyter
 
 # Expose 8000 Port
-EXPOSE 8000
+EXPOSE 8888
 
 # Go to workspace
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
